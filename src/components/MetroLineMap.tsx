@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import Audio from "../audio";
+
+const audioUrl = import.meta.env.VITE_AUDIO_URL;
 
 // eslint-disable-next-line react-refresh/only-export-components
 export enum LABEL_POSITION {
@@ -45,7 +46,8 @@ const MetroLineMap: React.FC<MetroLineMapProps> = ({ data, width, height }) => {
   const playAudio = async (file: string) => {
     if (audioRef.current) {
       // Set the fixed audio as the current source
-      audioRef.current.src = Audio.Nasta;
+      // audioRef.current.src = Audio.Nasta;
+      audioRef.current.src = `${audioUrl}/Nasta.mp3`;
       await audioRef.current.play();
       // Queue the selected audio file to play after the fixed audio
       setQueuedAudio(file);
@@ -55,8 +57,12 @@ const MetroLineMap: React.FC<MetroLineMapProps> = ({ data, width, height }) => {
   const handleAudioEnded = async () => {
     if (queuedAudio && audioRef.current) {
       // Once the fixed audio finishes, play the queued audio
-      audioRef.current.src = Audio[queuedAudio];
-      await audioRef.current.play();
+      const audio = queuedAudio.replace(/\s/g, "");
+      if (audio) {
+        // audioRef.current.src = Audio[queuedAudio];
+        audioRef.current.src = `${audioUrl}/${audio}.mp3`;
+        await audioRef.current.play();
+      }
       // Reset the queued audio to null
       setQueuedAudio(null);
     }
@@ -183,7 +189,7 @@ const MetroLineMap: React.FC<MetroLineMapProps> = ({ data, width, height }) => {
             .html(() =>
               point.name.replace(
                 /\n/g,
-                '<tspan x="' + (point.x + 15) + '" dy="1.2em">'
+                '<tspan x="' + point.x + '" dy="1.2em">'
               )
             );
         }
