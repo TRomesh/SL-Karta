@@ -98,8 +98,19 @@ import Bagarmossen from "./assets/audio/Bagarmossen.mp3";
 import Axelsberg from "./assets/audio/Axelsberg.mp3";
 import Aspudden from "./assets/audio/Aspudden.mp3";
 import ROPSTEN from "./assets/audio/ROPSTEN.mp3";
+import Kungsträdgården from "./assets/audio/Kungsträdgården.mp3";
+import AKALLA from "./assets/audio/AKALLA.mp3";
+import HJULSTA from "./assets/audio/HJULSTA.mp3";
+import MÖRBYCENTRUM from "./assets/audio/MÖRBYCENTRUM.mp3";
+import NORSBORG from "./assets/audio/NORSBORG.mp3";
 
 export default {
+  NORSBORG,
+  "FARSTA STRAND": FARSTASTRAND,
+  "MÖRBY CENTRUM": MÖRBYCENTRUM,
+  HJULSTA,
+  AKALLA,
+  Kungsträdgården,
   "Enskede\ngård": Enskedegård,
   Alby,
   Aspudden,
@@ -112,7 +123,6 @@ export default {
   Bredäng,
   Enskedegård,
   Farsta,
-  FARSTASTRAND,
   Fittja,
   FRUÄNGEN,
   Gubbängen,
