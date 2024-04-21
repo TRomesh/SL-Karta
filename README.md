@@ -1,30 +1,73 @@
-# React + TypeScript + Vite
+# SL Karta
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React application, built with Vite and integrating D3.js, visualizes the Stockholm metro map. It's hosted on Cloudflare Pages, ensuring fast, scalable, and robust performance.
 
-Currently, two official plugins are available:
+![SLKarta](https://github.com/TRomesh/SL-Karta/assets/9572090/ae5e6153-4bf2-40fd-92a1-780de40f73bf)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- React: Utilizes the latest React features for building user interfaces.
+- Vite: A modern, fast build tool that significantly improves the development experience.
+- D3.js: Provides powerful visualization tools to represent complex data.
+- Cloudflare Pages: Ensures optimal delivery speed and performance worldwide.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+Before you begin, ensure you have installed:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- Node.js (version 14 or later)
+- npm (comes with Node.js)
+- Git
+
+## Installation
+
+Clone the repository and install dependencies:
+
+```
+git clone https://github.com/TRomesh/SL-Karta
+cd SL-Karta
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Running the Application Locally
+
+To run the application in the development mode, use:
+
+```
+npm run dev
+```
+
+This command will start a local server. Open http://localhost:5173 to view it in your browser. The page will reload if you make edits.
+
+## Building and Running in Production
+
+To build the application for production, run:
+
+```bash
+Copy code
+npm run build
+```
+
+This will generate a dist folder that contains the production build of your app. You can serve it with any static asset server:
+
+```bash
+Copy code
+npm run preview
+```
+
+## Deployment on Cloudflare Pages
+
+The application is configured to automatically deploy via Cloudflare Pages upon pushing changes to the main branch. To set this up:
+
+1. Create a new project on Cloudflare Pages: Link your GitHub repository.
+2. Configure build settings: Set the build command to npm run build and the publish directory to dist/.
+3. Environment variables: Set any necessary environment variables through the Cloudflare dashboard.
+   Once configured, every push to your repository's main branch will trigger a new deployment automatically.
+
+## Contributing
+
+Contributions are welcome! Feel free to open an issue or pull request.
+
+## License
+
+This project is open-sourced under the MIT License. See the LICENSE file for more information.
